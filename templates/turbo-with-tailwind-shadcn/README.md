@@ -12,6 +12,10 @@ Run the following command:
 npx create-turbo@latest -e with-vite-react
 ```
 
+### Install tailwindcss in `apps/web`
+
+Follow the official [Tailwind CSS installation guide](https://tailwindcss.com/docs/guides/vite) for Vite.
+
 ## What's inside?
 
 This Turborepo includes the following packages and apps:
