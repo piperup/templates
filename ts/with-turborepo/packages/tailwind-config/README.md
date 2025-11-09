@@ -49,5 +49,5 @@ For a complete example, see `apps/with-vite-react`.
 2. In your app entry (for example `src/main.tsx`), import the stylesheet
 
 ```tsx
-import "./style.css"
+import "./style.css";
 ```
