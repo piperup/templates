@@ -16,6 +16,15 @@ npx create-turbo@latest -e with-vite-react
 
 Follow the official [Tailwind CSS installation guide](https://tailwindcss.com/docs/guides/vite) for Vite.
 
+### Install shadcn-ui in `packages/ui`
+
+Manually install shadcn-ui [shadcn-ui repository](https://ui.shadcn.com/docs/installation/manual).
+
+- add `global.css` to `packages/tailwind-config/shadcn-styles.css`
+  - modify `../tailwind-config/shadcn-styles.css` in `packages/ui/components.json`
+- add `baseUrl` and `paths` to `packages/ui/tsconfig.json`
+- alias `@repo/ui` to `packages/ui/src` in `packages/ui/components.json`
+
 ## What's inside?
 
 This Turborepo includes the following packages and apps:
