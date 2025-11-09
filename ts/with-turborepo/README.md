@@ -2,7 +2,7 @@
 
 A Turborepo monorepo with Vite + React + TypeScript, featuring shared configurations and shadcn/ui components.
 
-Based on the community example `with-vite-react` (v2.6.0).
+Based on the community-maintained example `with-vite-react` (v2.6.0).
 
 ## Quick Start
 
