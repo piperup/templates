@@ -21,7 +21,7 @@ A curated collection of production-ready templates, AI prompts, and automation t
 | **[with-awesome-copilot](./ai/with-awesome-copilot)** | AI-powered prompts and instructions for GitHub Copilot. Includes README generation, code review templates, and markdown documentation standards. Copy and customize for your AI-assisted workflows. |
 
 > [!TIP]
-> Each template includes its own detailed README with setup instructions and usage guides.
+> Don't try to use all templates at once. Pick the one that matches your current need, copy it, and build from there.
 
 ## License
 
