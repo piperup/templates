@@ -1,6 +1,6 @@
 {
   "extends": "@repo/typescript-config/vite.json",
-  "include": ["stories"],
+  "include": ["stories", ".storybook/**/*"],
   "compilerOptions": {
     "jsx": "react-jsx"
   }
