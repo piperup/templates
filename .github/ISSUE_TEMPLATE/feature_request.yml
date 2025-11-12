@@ -1,6 +1,6 @@
 name: ✨ Feature Request
 description: Suggest a new feature or enhancement for piper-templates
-title: "[Feature]: "
+title: "feat: "
 labels: ["feat"]
 body:
   - type: markdown
