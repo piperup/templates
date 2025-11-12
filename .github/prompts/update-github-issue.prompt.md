@@ -6,6 +6,7 @@ tools:
   - github/github-mcp-server/search_issues
   - github/github-mcp-server/issue_read
   - github/github-mcp-server/issue_write
+  - github/github-mcp-server/add_issue_comment
 ---
 
 # Format GitHub Issue
@@ -58,8 +59,10 @@ Reformat and review an existing GitHub issue ${input:issue_number:Issue number o
 
 6. **Preserve Voice and Tone**
 
-   - Keep the author’s language, writing style, and sentiment.
-   - Avoid rewriting content to sound overly formal or neutral.
+   - Retain the author's original language, writing style, and sentiment.
+   - You **may** improve clarity, grammar, or organization, but **must not** remove any factual information provided by the author.
+   - Preserve exact wording where possible—only modify when necessary for readability or template compliance.
+   - If clarification is needed, add minimal context without changing the author's voice or intent.
 
 7. **Optional: Preview Step (if enabled)**
 
@@ -72,6 +75,28 @@ Reformat and review an existing GitHub issue ${input:issue_number:Issue number o
 8. **Write Updated Issue**
 
    - Use #github/github-mcp-server/issue_write tool to replace the issue’s body and/or title with the reformatted content.
+
+9. **Add a Review and Suggest Improvements**
+
+   Perform a content review to enhance the issue’s usefulness by suggesting possible directions.
+
+   When to Use:
+
+   - The issue is vague or lacks actionable details.
+   - The author’s intent is clear but missing references, methods, or next steps.
+
+   Guidelines:
+
+   - Offer non-intrusive, constructive, and informative additions.
+   - Suggest, but do not impose, possible improvements such as:
+     - Potential solutions or approach outlines.
+     - Relevant methods, functions, or API endpoints.
+     - Helpful examples.
+     - Common troubleshooting steps or best practices.
+
+10. **Add Comment with Review**
+
+    - Use #github/github-mcp-server/add_issue_comment tool to append a comment with the review and suggestions.
 
 ## Output
 
