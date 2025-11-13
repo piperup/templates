@@ -2,96 +2,76 @@
 
 ## Repository Overview
 
-This is a **template collection** repository containing reusable project scaffolds, AI prompts, and automation configurations. Not a single application—each directory is an independent, copy-paste starting point meant to be copied and customized.
+This repository is a template collection containing reusable project scaffolds, AI prompts, and automation configurations. It is not a single application. Each top-level template directory is an independent, copy-and-customize starting point.
 
-**Structure:**
+**Top-level structure:**
 
-- `ts/with-turborepo/` - Complete Turborepo monorepo template (Vite + React 19 + TypeScript + shadcn/ui)
-- `ai/with-awesome-copilot/` - AI prompt templates and instruction files for GitHub Copilot workflows
-- `.github/prompts/` - Repository-level AI prompts (e.g., `create-readme.prompt.md`)
-- `.github/instructions/` - Repository-level instruction files (e.g., `markdown.instructions.md` for MD validation)
-- `.vscode/` - VS Code extension recommendations and settings
+- `ts/with-turborepo/` – Turborepo-based TypeScript monorepo template.
+- `ai/with-awesome-copilot/` – Copilot prompt and instruction templates.
+- `.github/prompts/` – Repository-level prompts for tasks such as README or PR generation.
+- `.github/instructions/` – Auto-applied instructions by file type (for example, Markdown rules).
+- `.vscode/` – Editor settings and recommended extensions for working with the templates.
 
-## Turborepo Monorepo Architecture
+When assisting in this repository, treat each template folder as a standalone starter project and avoid coupling changes across templates unless explicitly requested.
 
-**Package Manager:** pnpm v8.15.6 with workspaces. Internal packages use `workspace:*` protocol.
+## Template Structure
 
-**Key Commands:**
+### `ts/with-turborepo/`
 
-- `pnpm build` - Turborepo builds all packages in topological order
-- `pnpm dev` - Starts all dev servers (persistent, no cache)
-- `pnpm lint` / `pnpm typecheck` - Run across entire workspace
+TypeScript monorepo template based on Turborepo and pnpm workspaces.
 
-**Monorepo Structure (`ts/with-turborepo/`):**
+- `apps/with-vite-react/` – Vite + React application template.
+- `apps/with-vite-react-storybook/` – Vite + React + Storybook example app.
+- `packages/ui/` – Shared UI components (including shadcn-style primitives and utilities).
+- `packages/eslint-config/` – Shared ESLint v9 flat configurations.
+- `packages/typescript-config/` – Shared TypeScript configuration presets.
+- `packages/tailwind-config/` – Shared Tailwind v4 design tokens and styles.
 
-```
-apps/with-vite-react/      # React 19 + Vite app
-packages/
-  ui/                      # Shared components (shadcn/ui)
-  eslint-config/           # ESLint v9 flat configs
-  typescript-config/       # TypeScript presets
-  tailwind-config/         # Tailwind v4 design tokens
-```
+When editing code under `ts/with-turborepo/`, favor incremental, localized changes that keep templates generic and easy to copy into new projects.
 
-**Critical Patterns:**
+### `ai/with-awesome-copilot/`
 
-1. **Shared Packages** - All use `workspace:*` protocol and export composable configs
+Template collection for Copilot workflows.
 
-   - `@repo/ui` - shadcn/ui components with subpath exports (`@repo/ui/components/ui/button`)
-   - `@repo/eslint-config` - Composable flat configs (`base.js`, `react-internal.js`)
-   - `@repo/typescript-config` - Strict presets (`base.json`, `react-library.json`, `vite.json`)
-   - `@repo/tailwind-config` - Tailwind v4 with OKLCH tokens in `shared-styles.css`
+- `instructions/` – Instruction files applied to specific file types or tasks.
+- `prompts/` – Reusable prompt templates (for example, README or PR generation).
 
-2. **Tailwind v4 Scanning** - Apps import `shared-styles.css` with `@source` directive pointing to `../../../packages/ui/src/**/*.{ts,tsx}` for cross-package class scanning
+Use these files as patterns when creating new prompts or instruction documents in this repository.
 
-3. **shadcn/ui** - Manual installation (no CLI), components in `packages/ui/src/components/ui/`, use `cn()` utility for conditional classes
+### `.github/`
 
-4. **ESLint v9** - Flat config pattern: import shared configs and spread in `eslint.config.js`
+- `prompts/` – Entry-point prompts (for example, `create-readme.prompt.md`, `update-readme.prompt.md`).
+- `instructions/` – Global instruction files such as Markdown guidelines.
 
-5. **TypeScript** - No project references (Turborepo handles build order), `noEmit: true` in apps
+These files describe how Copilot should behave for documentation and automation tasks across the repository.
 
-## AI Workflow Tools
+## How Copilot Should Use This Repo
 
-**Prompts (`.github/prompts/`)** - Repository-level AI prompts for tasks like README generation
+- Treat each template (for example, `ts/with-turborepo`, `ai/with-awesome-copilot`) as a standalone starting point when generating code or documentation.
+- Prefer generic, reusable examples over project-specific logic so that templates remain broadly applicable.
+- When generating new files, mirror the structure and conventions of the closest existing template folder.
+- For configuration packages (ESLint, TypeScript, Tailwind), propose changes that improve clarity, maintainability, or safety without tightly coupling them to a single app.
 
-- Usage: `@workspace follow instructions in .github/prompts/create-readme.prompt.md`
+## Code Review Focus
 
-**Instructions (`.github/instructions/`)** - Auto-applying rules for file types (e.g., `markdown.instructions.md` for all `**/*.md`)
+During code review suggestions in this repository:
 
-**Templates (`ai/with-awesome-copilot/`)** - Copy-paste prompt/instruction templates for your own projects
+- Emphasize readability, consistency, and clear separation between shared packages and app-specific code.
+- Encourage use of shared configs and utilities (for example, `@repo/eslint-config`, `@repo/typescript-config`, `@repo/ui`) instead of duplicating logic.
+- Highlight opportunities to simplify templates, remove unused boilerplate, and keep examples minimal but complete.
+- Check that examples compile logically and align with the expected stack (TypeScript, Vite, React, Tailwind, ESLint v9).
 
-## Key Decisions
+## Documentation Writing Focus
 
-- **ESLint v9 flat config** - No cascading `.eslintrc` files
-- **Tailwind v4** - Native CSS layers, no PostCSS
-- **Subpath exports** - Tree-shaking friendly
-- **OKLCH colors** - Better perceptual uniformity
+When helping write or update documentation in this repository:
+
+- Use concise, technical language and avoid marketing phrasing.
+- Describe template structure, purpose, and key decisions rather than full step-by-step usage guides.
+- Keep README files short, with clear sections such as overview, structure, and basic usage notes.
+- Align new docs with `.github/prompts/update-readme.prompt.md` and other existing prompt styles.
 
 ## Template Usage Philosophy
 
-**Critical: This is NOT a library or framework.** Templates are designed to be:
-
-1. **Copied** - Use `cp -r ts/with-turborepo my-project` not git clone/submodules
-2. **Customized** - Delete unused packages, modify configs, adapt to needs
-3. **Owned** - Once copied, it's the user's code to evolve independently
-
-When helping users:
-
-- Recommend copying relevant template directories, not referencing them
-- Suggest removing unused parts (e.g., drop `@repo/ui` if not needed)
-- Avoid treating templates as "upstream" dependencies to track
-
-## Common Pitfalls
-
-- **Tailwind scanning:** Apps must adjust `@source` path in CSS based on monorepo depth (e.g., `../../../packages/ui/src/**`)
-- **ESLint imports:** Use `workspace:*` protocol, not relative paths, for shared configs
-- **Turborepo caching:** `dev` task has `cache: false` and `persistent: true` - don't cache long-running servers
-- **TypeScript paths:** No path aliases configured - rely on package names (`@repo/ui`)
-- **AI instruction scope:** `.github/instructions/markdown.instructions.md` has blog-specific validation fields (post_title, categories) - these are examples, not universal requirements
-
-## License & Attribution
-
-MIT License - templates meant for copy/modification. Based on:
-
-- Turborepo community example `with-vite-react` v2.6.0
-- GitHub's awesome-copilot project (prompts/instructions)
+- Treat templates as starting points that are meant to be copied and customized.
+- Avoid assuming that consumers will keep this repository as an upstream dependency.
+- Encourage users (and generated instructions) to delete unused packages and adjust configurations to fit new projects.
