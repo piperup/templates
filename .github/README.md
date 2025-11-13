@@ -22,7 +22,7 @@ This folder contains GitHub templates and Copilot instruction files intended to 
 
    Copy this folder into a repository's `.github/` directory to enable the templates and instructions.
 
-2. **Install the GitHub MCP server**
+2. **Start the GitHub MCP server**
 
    Install and configure the GitHub MCP server so compatible AI tools can read these templates and instructions.
 
