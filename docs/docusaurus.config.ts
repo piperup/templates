@@ -64,6 +64,7 @@ const config: Config = {
       logo: {
         alt: "Piper Templates Logo",
         src: "img/logo.svg",
+        srcDark: "img/logo-dark.svg",
       },
       items: [
         {
