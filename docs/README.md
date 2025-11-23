@@ -16,7 +16,7 @@ pnpm start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-The site is available locally at `http://localhost:9001/piper-templates/`.
+The site is available locally at `http://localhost:9001/`.
 
 ## Build
 
@@ -29,7 +29,7 @@ This command generates static content into the `build` directory and can be serv
 ## Deployment
 
 ```bash
-GIT_USER=pipersgo pnpm deploy
+GIT_USER=piperup pnpm deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
