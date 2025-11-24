@@ -1,9 +1,9 @@
 {
-  "name": "@piper-templates/docs",
+  "name": "@piperup/templates-docs",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "description": "Documentation site for piper-templates",
+  "description": "Documentation site for @piperup/templates",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --port 9001",
