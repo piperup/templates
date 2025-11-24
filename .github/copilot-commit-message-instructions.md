@@ -1,6 +1,6 @@
 <!--
 This work is inspired by and derived from "conventionalcommits.org" Copyright (c) 2018 Conventional Changelog.
-Modified by pipersgo, 2025.
+Modified by piperup, 2025.
 
 Licensed under the MIT License.
 See ThirdPartyNotices.txt for license details.

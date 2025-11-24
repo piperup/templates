@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   plugins: ["./src/plugins/plugin-tailwind.ts"],
   title: "Piper Templates",
-  tagline: "By PipersGo",
+  tagline: "By PiperUp",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -16,15 +16,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://pipersgo.github.io",
+  url: "https://templates-page.piperup.dev",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/piper-templates/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "pipersgo", // Usually your GitHub org/user name.
-  projectName: "piper-templates", // Usually your repo name.
+  organizationName: "piperup", // Usually your GitHub org/user name.
+  projectName: "templates", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
   onBrokenLinks: "throw",
@@ -45,7 +45,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/pipersgo/piper-templates/tree/main/docs",
+          editUrl: "https://github.com/piperup/templates/tree/main/docs",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -60,9 +60,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Piper Templates",
+      title: "PiperUp Templates",
       logo: {
-        alt: "Piper Templates Logo",
+        alt: "PiperUp Templates Logo",
         src: "img/logo.svg",
         srcDark: "img/logo-dark.svg",
       },
@@ -74,7 +74,7 @@ const config: Config = {
           label: "Docs",
         },
         {
-          href: "https://github.com/pipersgo/piper-templates",
+          href: "https://github.com/piperup/templates",
           label: "GitHub",
           position: "right",
         },
@@ -97,12 +97,12 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/pipersgo/piper-templates",
+              href: "https://github.com/piperup/templates",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} PipersGo. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} PiperUp. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

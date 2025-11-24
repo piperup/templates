@@ -5,7 +5,7 @@
 #
 # Original Copyright GitHub, Inc.
 # See ThirdPartyNotices.txt for license details.
-# Modified by pipersgo, 2025.
+# Modified by piperup, 2025.
 mode: "agent"
 description: "Create GitHub Pull Request for feature request from specification file using pull_request_template.md template."
 tools:

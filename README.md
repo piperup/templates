@@ -1,6 +1,6 @@
 <div align="center">
-<a href="https://pipersgo.github.io/piper-templates">
-<img src="./docs/static/img/header-table.png" alt="Piper Templates Header Table" />
+<a href="https://templates-page.piperup.dev">
+<img src="./docs/static/img/header-table.png" alt="PiperUp Templates Header Table" />
 </a>
 </div>
 
@@ -10,7 +10,7 @@
 
 </div>
 
-# Piper Templates
+# PiperUp Templates
 
 ⭐ If you like this project, star it on GitHub — it helps a lot!
 
@@ -18,7 +18,7 @@ A curated collection of production-ready templates, AI prompts, and automation t
 
 ## Documentation
 
-For detailed guides, setup instructions, and best practices, visit the [Piper Templates documentation](https://pipersgo.github.io/piper-templates).
+For detailed guides, setup instructions, and best practices, visit the [Piperup Templates documentation](https://templates-page.piperup.dev).
 
 ## Templates
 
